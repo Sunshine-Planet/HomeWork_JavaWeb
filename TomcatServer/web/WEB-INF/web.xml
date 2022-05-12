@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <servlet>
+        <servlet-name>Hello</servlet-name>
+        <servlet-class>c04.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Hello</servlet-name>
+        <url-pattern>/c04</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SecondServlet</servlet-name>
+        <servlet-class>c05.SecondServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SecondServlet</servlet-name>
+        <url-pattern>/c05</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>c05.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/c05/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MyServlet</servlet-name>
+        <servlet-class>c07.Myservlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyServlet</servlet-name>
+        <url-pattern>/c07/my</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CookieServlet</servlet-name>
+        <servlet-class>c07.CookieServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CookieServlet</servlet-name>
+        <url-pattern>/c07/cookie</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DoLogin</servlet-name>
+        <servlet-class>c08.servlet.DoLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DoLogin</servlet-name>
+        <url-pattern>/c08/doLogin</url-pattern>
+    </servlet-mapping>
+
+
+
+<!--
+    <filter>
+        <filter-name>LogFilter</filter-name>
+        <filter-class>c06.LogFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LogFilter</filter-name>
+        <url-pattern>/c06</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>MyFilter02</filter-name>
+        <filter-class>c07.MyFilter02</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>MyFilter02</filter-name>
+        <url-pattern>/my</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>MyFilter01</filter-name>
+        <filter-class>c07.MyFilter01</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>MyFilter01</filter-name>
+        <url-pattern>/my</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>AutoLoginFilter</filter-name>
+        <filter-class>c08.filter.AutoLoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AutoLoginFilter</filter-name>
+        <url-pattern>/c08/*</url-pattern>
+    </filter-mapping>
+
+
+    <listener>
+        <description>ServletContextListener</description>
+        <listener-class>c09.listener.MyServletContextListener</listener-class>
+    </listener>
+
+    <listener>
+        <description>MyListener</description>
+        <listener-class>c09.listener.MyListener</listener-class>
+    </listener>
+
+
+    <listener>
+        <description>MyAttributeListener</description>
+        <listener-class>c09.listener.MyAttributeListener</listener-class>
+    </listener>
+    <session-config>
+        <session-timeout>2</session-timeout>
+    </session-config>
+-->
+</web-app>
