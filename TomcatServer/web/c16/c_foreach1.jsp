@@ -19,7 +19,7 @@
     pageContext.setAttribute("fruits0", fruits);
 %>
 数组中的元素: <br>
-<c:forEach var="name" items="${fruits0a}">
+<c:forEach var="name" items="${fruits0}">
     ${name} <br>
 </c:forEach>
 <hr>
