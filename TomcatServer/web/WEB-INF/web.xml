@@ -56,7 +56,14 @@
         <servlet-name>DoLogin</servlet-name>
         <url-pattern>/c08/doLogin</url-pattern>
     </servlet-mapping>
-
+    <servlet>
+        <servlet-name>MVCLogin</servlet-name>
+        <servlet-class>c19.servlet.Login</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MVCLogin</servlet-name>
+        <url-pattern>/c19/login</url-pattern>
+    </servlet-mapping>
 
 
 <!--
