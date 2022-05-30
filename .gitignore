@@ -1,5 +1,5 @@
 docs/*
-out/*
+*/out/*
 Servers/*
-TomcatServer/web/WEB-INF/classes/*
-TomcatServer/web/WEB-INF/lib/*
+*/TomcatServer/web/WEB-INF/classes/*
+*/TomcatServer/web/WEB-INF/lib/*
