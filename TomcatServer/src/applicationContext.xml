@@ -6,4 +6,8 @@
     <bean id="userDao2" class="c21.di.UserDao2Impl">
         <property name="userDao" ref="userDao"/>
     </bean>
+    <bean id="userLoginDao" class="c22.login.UserLoginDaoImpl"/>
+    <bean id="userService" class="c22.login.UserServiceImpl">
+        <property name="userLoginDao" ref="userLoginDao"></property>
+    </bean>
 </beans>
