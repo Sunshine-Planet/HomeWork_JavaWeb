@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 使用 UserTest>
+<mapper namespace="pojo.User">
+<-->
+<!-- 使用 UserMapper 接口>
+<-->
+<mapper namespace="mapper.EmployeeMapper">
+
+    <select id="findEmployeeById"
+            parameterType="Integer"
+            resultType="Employee">
+        select * from employee where id = #{id}
+    </select>
+
+    <insert id="addEmployee"
+            parameterType="Employee">
+        insert into
+        employee(id, name, age, position)
+        values(null, #{name}, #{age}, #{position})
+    </insert>
+
+    <update id="updateEmployeeById"
+            parameterType="Employee">
+        update employee
+        set name = #{name}, age = #{age}, position = #{position}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteEmployeeById"
+            parameterType="Integer">
+        delete from employee where id = #{id}
+    </delete>
+</mapper>

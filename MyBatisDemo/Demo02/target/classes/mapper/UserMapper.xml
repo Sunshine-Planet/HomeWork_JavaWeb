@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 使用 UserTest>
+<mapper namespace="pojo.User">
+<-->
+<!-- 使用 UserMapper 接口>
+<-->
+<mapper namespace="mapper.UserMapper">
+    <!-->
+    <select id="findUserById"
+            parameterType="int"
+            resultType="User">
+        select *
+        from users
+        where uid = #{id};
+    </select>
+    <-->
+    <sql id="users">users</sql>
+    <sql id="whichDB">
+        from <include refid="${include_target}"/>
+    </sql>
+    <sql id="usersColumns">
+        uid, user_name, uage
+    </sql>
+    <select id="findUserById"
+            parameterType="int"
+            resultType="User">
+        select
+        <include refid="usersColumns"/>
+        <include refid="whichDB">
+            <property name="include_target" value="users"/>
+        </include>
+        where uid = #{id};
+    </select>
+
+    <select id="findUserTotal"
+            resultType="int">
+        select count(*)
+        from users
+    </select>
+<!-->
+    <insert id="addUser"
+            parameterType="User"
+            useGeneratedKeys="true"
+            keyProperty="uid">
+        insert into
+        users(uid, user_name, uage) values(null, #{userName}, #{uage})
+    </insert>
+<-->
+    <insert id="addUser"
+            parameterType="User">
+        <selectKey keyProperty="uid"
+                    resultType="Integer"
+                    order="BEFORE">
+<!-- 支持主键自增 order="AFTER">
+            select LAST_INSERT_ID()
+<-->
+            select floor(rand() * 1000 + 1)
+        </selectKey>
+        insert into
+            users(uid, user_name, uage) values(#{uid}, #{userName}, #{uage})
+    </insert>
+
+    <update id="updateUser"
+            parameterType="User">
+        update users
+        set user_name = #{userName}, uage = #{uage}
+        where uid = ${uid}
+    </update>
+
+    <delete id="deleteUser"
+            parameterType="Integer">
+        delete from users where uid = ${uid}
+    </delete>
+
+</mapper>
