@@ -3,4 +3,4 @@ docs/*
 Servers/*
 */web/WEB-INF/classes
 */web/WEB-INF/lib
-*/*/target
+*/*/target/*
